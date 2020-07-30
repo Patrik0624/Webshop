@@ -102,7 +102,34 @@ table {
 	.products_button, .backtomenu {
 		transition: 0.1s ease-in-out;
 	}
+/*==========FOOTER==========*/
+	footer {
+		width: 100%;
+		height: 7rem;
+		background-color: white;
+		z-index: 5;
+		display: table;
+		box-shadow: 0 0 2px gray;
+		padding: 1rem;
+	}
+	footer p {
+		font-weight: 500;
+		display: table-cell;
+		font-size: 1rem;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 1.2rem;
+	}
 /*==========MEDIA QUERY==========*/
+	@media screen and (min-width: 768px) {
+		footer {
+			height: 7rem;
+		}
+		footer p {
+			font-size: 1.2rem;
+			line-height: 1.4rem;
+		}
+	}
 	@media screen and (min-width: 1024px) {
 		button[name=kosárba]:hover {
 			background-color: rgb(31, 62, 152);

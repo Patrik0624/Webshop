@@ -14,6 +14,6 @@ $(document).ready(function(){
   });
 //BACK TO MENU:
   $('.backtomenu').click(function(){
-    window.open($(this).attr("href"));
+    window.open($(this).attr("href"),"_self");
   });
 });

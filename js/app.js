@@ -5,6 +5,6 @@ $(document).ready(function(){
   });
 //OPEN PRODUCT:
   $(".product").click(function(){
-    window.open($(this).attr("href"));
+    window.open($(this).attr("href"),"_self");
   });
 });

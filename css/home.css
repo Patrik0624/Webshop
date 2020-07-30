@@ -8,28 +8,28 @@
 		display: table;
 	}
 	h1 {
-		font-size: 2.8rem;
+		font-size: 2rem;
 		display: table-cell;
 		vertical-align: middle;
 		text-align: center;
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.3rem;
-    line-height: 3rem;
+    line-height: 2.3rem;
 		color: white;
 	}
 /*==========PRODUCTS==========*/
 	.products {
 		width: 100%;
-		position: absolute;
-		top: calc(5rem + 30vh);
+		margin-top: calc(5rem + 30vh);
 		font-size: 0;
 		padding: 0 1rem;
+		padding-bottom: 5rem;
 	}
 	.product {
-		width: calc(100% / 3 - 4vw);
+		width: calc(100% / 2 - 2vw);
 		display: inline-block;
-		margin: 3vw 2vw;
+		margin: 3vw 1vw;
 		cursor: pointer;
 		transition: 0.2s ease-in-out;
 		padding: 2vw;
@@ -65,6 +65,17 @@
 		margin: auto;
 	}
 /*==========MEDIA QUERY==========*/
+	@media screen and (min-width: 768px) {
+		h1 {
+			font-size: 2.8rem;
+			line-height: 3rem;
+		}
+		.product {
+			width: calc(100% / 3 - 4vw);
+			margin: 3vw 2vw;
+			padding: 2vw;
+		}
+	}
   @media screen and (min-width: 1024px) {
     header {
       height: 50vh;
@@ -73,21 +84,31 @@
 			font-size: 3rem;
 		}
     .products {
-      padding: 1rem 10rem;
-      top: calc(5rem + 50vh);
+      padding: 1rem 10%;
+      margin-top: calc(5rem + 50vh);
     }
+		.product {
+			width: calc(100% / 3 - 1rem);
+			margin: 0.5rem;
+			padding: 2vw;
+		}
     .product p {
   		font-size: 1rem;
   		margin: 0.5rem 0 2rem;
   		text-align: center;
   	}
 		.product h3 {
-			font-size: 1.3rem;
-			line-height: 1.5rem;
+			font-size: 1.6rem;
+			line-height: 1.8rem;
 			margin: 1rem 0;
 		}
 		button[name=kosárba] {
-			width: 80%;
-			margin-left: 10%;
+			width: 60%;
+			margin-left: 20%;
 		}
   }
+	@media screen and (min-width: 1440px) {
+		.products {
+      padding: 1rem 20%;
+    }
+	}
