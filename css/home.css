@@ -32,9 +32,12 @@
 		margin: 3vw 2vw;
 		cursor: pointer;
 		transition: 0.2s ease-in-out;
+		padding: 2vw;
+		vertical-align: top;
 	}
 	.product:hover {
-		transform: scale(1.02);
+		background-color: rgba(255,255,255,.6);
+		border-radius: 10px;
 		transition: 0.2s ease-in-out;
 	}
 	.products a {
@@ -47,38 +50,44 @@
 		box-shadow: 0 0 2px gray;
 	}
 	.product h3 {
-		margin-top: 1vw;
-		font-size: 3.5vw;
+		margin: 1rem 0;
+		font-size: 1.2rem;
 		text-align: center;
-    font-weight: 500;
+		line-height: 1.4rem;
 	}
 	.product p {
 		font-size: 3vw;
 		margin: 1vw 0 2vw;
 		text-align: center;
 	}
+	button[name=kosárba] {
+		width: 100%;
+		margin: auto;
+	}
 /*==========MEDIA QUERY==========*/
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     header {
       height: 50vh;
     }
 		header h1 {
-			font-size: 6vw;
+			font-size: 3rem;
 		}
     .products {
       padding: 1rem 10rem;
       top: calc(5rem + 50vh);
     }
-    .product {
-      width: calc(100% / 4 - 2vw);
-      margin: 2vw 1vw;
-    }
-    .product h3 {
-  		font-size: 2vw;
-  	}
     .product p {
-  		font-size: 1.7vw;
+  		font-size: 1rem;
   		margin: 0.5rem 0 2rem;
   		text-align: center;
   	}
+		.product h3 {
+			font-size: 1.3rem;
+			line-height: 1.5rem;
+			margin: 1rem 0;
+		}
+		button[name=kosárba] {
+			width: 80%;
+			margin-left: 10%;
+		}
   }
