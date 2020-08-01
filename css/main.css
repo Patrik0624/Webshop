@@ -42,6 +42,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+button:focus {
+	outline: none;
+}
 /*==========COLORS==========*/
 	/*DARK BLUE = rgb(1, 49, 72)*/
 	/*LIGHT BLUE = rgb(123, 193, 203)*/
@@ -56,26 +59,6 @@ table {
     background-color: rgba(236, 195, 133,.5);
     font-family: 'Montserrat';
   }
-	button[name=kosárba] {
-	  padding: 0.5rem;
-	  width: 8rem;
-	  background-color: white;
-	  font-family: 'Montserrat';
-	  border-radius: 10px;
-	  font-size: 1.1rem;
-	  cursor: pointer;
-	  margin-left: calc(50% - 4.5rem);
-		font-weight: 500;
-		transition: 0.2s ease-in-out;
-		border: none;
-		box-shadow: 0 0 2px gray;
-	}
-	button[name=kosárba]:focus {
-		outline: none;
-		background-color: rgb(31, 62, 152);
-		color: white;
-		transition: 0.2s ease-in-out;
-	}
 /*==========NAV==========*/
   nav {
     width: 100%;
@@ -131,11 +114,6 @@ table {
 		}
 	}
 	@media screen and (min-width: 1024px) {
-		button[name=kosárba]:hover {
-			background-color: rgb(31, 62, 152);
-			color: white;
-			transition: 0.2s ease-in-out;
-		}
 		nav a {
 			padding-left: 2rem;
 			padding-right: 2rem;
