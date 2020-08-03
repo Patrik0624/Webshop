@@ -6,6 +6,32 @@ $(document).ready(function(){
   $('.cart').click(function(){
     $("html, body").animate({scrollTop: $("#cart").offset().top}, "slow");
   })
+//PRODUCT PHOTO VIEWER:
+  $('button[name=next]').click(function(){
+    var imageSlider = $(this).siblings('.image-slider');
+    imageSlider.find('.active').appendTo(imageSlider);
+    imageSlider.find('img').removeClass('active');
+    imageSlider.find('img').first().addClass('active');
+  });
+  $('button[name=prev]').click(function(){
+    var imageSlider = $(this).siblings('.image-slider');
+    imageSlider.find('.active').prependTo(imageSlider);
+    imageSlider.find('img').removeClass('active');
+    imageSlider.find('img').last().addClass('active');
+  });
+//COLOR SELECTER:
+  $('.select-color-button').click(function(){
+    $('.color-selector').fadeIn('fast');
+  });
+  $('.color-selector').click(function(){
+    $(this).fadeOut('fast');
+  });
+  $('button[name=mallow]').click(function(){
+    addItemToCart('Előétel áldás kártya mályva', 'assets/Products/Elő áldás kártya/eloaldas.JPG');
+  });
+  $('button[name=blue]').click(function(){
+    addItemToCart('Előétel áldás kártya kék', 'assets/Products/Elő áldás kártya/eloaldaskek.JPG');
+  });
 //CART:
   if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
@@ -39,9 +65,6 @@ $(document).ready(function(){
     var input = event.target
     if (isNaN(input.value) || input.value <= 0 || input.value > 500) {
       input.value = 1
-    }
-    if (input.value > 500) {
-      alert('500 a maximum!')
     }
   }
 
@@ -85,7 +108,9 @@ $(document).ready(function(){
     }
     var cartRowContents = `
     <img src="${imageSrc}" alt="">
-    <h3 class="cart-item-title">${title}</h3>
+    <div class="cart-item-title-box">
+      <h3 class="cart-item-title">${title}</h3>
+    </div>
     <input class="cart-quantity-input" type="number" value="1">
     <button class="removeItem" type="button" name="button">Törlés</button>`
     cartRow.innerHTML = cartRowContents

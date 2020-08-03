@@ -39,8 +39,12 @@
     top: -5rem;
 	}
 	.product img {
+		display: none;
 		width: 100%;
 		box-shadow: 0 0 2px gray;
+	}
+	.active {
+		display: block !important;
 	}
 	.product h3 {
 		margin: 1rem 0;
@@ -72,6 +76,24 @@
 	.logo {
 		width: 60%;
 		margin: 0 20%;
+	}
+	.image-box {
+		position: relative;
+	}
+	button[name=next], button[name=prev] {
+		position: absolute;
+		height: 100%;
+		border: none;
+		background-color: rgba(0,0,0,.0);
+		transition: 0.2s ease-in-out;
+		font-size: 2rem;
+		cursor: pointer;
+		padding: 0.5rem;
+		color: rgba(0,0,0,.7);
+		text-shadow: 0 0 10px gray;
+	}
+	button[name=next] {
+		right: 0;
 	}
 /*==========CART==========*/
 	.thecart {
@@ -120,12 +142,19 @@
 		border-radius: 10px;
 	}
 	.cart-item-title {
-		display: inline-block;
+		display: table-cell;
 		font-size: 1.3rem;
-		width: calc(100% - 8rem);
 		margin-left: 1rem;
 		vertical-align: top;
 		margin-top: 1.3rem;
+		vertical-align: middle;
+	}
+	.cart-item-title-box {
+		display: inline-table;
+		width: calc(100% - 8rem);
+		height: 5rem;
+		margin-left: 1rem;
+		vertical-align: top;
 	}
 	.cart-row input {
 		width: 4rem;
@@ -175,8 +204,48 @@
 		font-size: 1.1rem;
 	}
 	.emptybutton {
-		background-color: rgba(200,200,200);
+		background-color: rgba(200,200,200) !important;
 		color: rgba(250,250,250);
+	}
+/*==========COLOR SELECTOR==========*/
+	.color-selector {
+		display: none;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: rgba(255,255,255,.5);
+		z-index: 8;
+	}
+	.colors {
+		width: 70%;
+		height: 7rem;
+		background-color: rgb(236, 195, 133);
+		border-radius: 10px;
+		margin: auto;
+		margin-top: calc(50vh - 2.5rem);
+		padding: 0.5rem;
+		font-size: 0;
+		box-shadow: 0 0 2px gray;
+	}
+	.colors p {
+		font-size: 1rem;
+		text-align: center;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+	}
+	.colors button {
+		width: calc(50% - 1rem);
+		margin: 0.5rem;
+		height: 3rem;
+		border-radius: 10px;
+		border: none;
+		box-shadow: 0 0 2px gray;
+		font-family: 'Montserrat';
+		font-size: 1rem;
+		cursor: pointer;
 	}
 /*==========MEDIA QUERY==========*/
 	@media screen and (min-width: 768px) {
@@ -200,7 +269,7 @@
 			width: 50%;
 			margin: -3rem 25% -2rem;
 		}
-		.cart-item-title {
+		.cart-item-title-box {
 			width: calc(100% - 17rem - 9%);
 		}
 		.cart-row button, .cart-row input {
@@ -215,6 +284,12 @@
 		}
 		.cart-row::after {
 			margin-top: 1rem;
+		}
+		.colors {
+			width: 50%;
+		}
+		button[name=next], button[name=prev] {
+			font-size: 2.3rem;
 		}
 	}
   @media screen and (min-width: 1024px) {
@@ -253,14 +328,26 @@
 		.cart-row {
 			width: 30rem;
 		}
-		button[name=kosárba]:hover, .purchase-button:hover {
+		button[name=kosárba]:hover, .colors button:hover, .purchase-button:hover {
 			background-color: rgb(31, 62, 152);
 			color: white;
 			transition: 0.2s ease-in-out;
 		}
+		button[name=next]:hover, button[name=prev]:hover {
+			background-color: rgba(0,0,0,.1);
+			transition: 0.2s ease-in-out;
+			padding: 1rem;
+			color: rgba(0,0,0,.8);
+		}
+		button[name=next], button[name=prev] {
+			color: rgba(255,255,255,.5);
+		}
 		.logo {
 			width: 25rem;
 			margin-left: calc(50% - 12.5rem);
+		}
+		.colors {
+			width: 20rem;
 		}
   }
 	@media screen and (min-width: 1440px) {
