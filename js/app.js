@@ -57,8 +57,6 @@ $(document).ready(function(){
       var button = addToCartButtons[i]
       button.addEventListener('click', addToCartClicked)
     }
-
-    document.getElementsByClassName('purchase-button')[0].addEventListener('click', purchaseClicked)
   }
 
   function quantityChanged(event) {
@@ -66,19 +64,6 @@ $(document).ready(function(){
     if (isNaN(input.value) || input.value <= 0 || input.value > 500) {
       input.value = 1
     }
-  }
-
-  function purchaseClicked() {
-    if ($('.yourcart').children().length == 0) {
-      alert('A kosár üres!')
-    } else {
-      alert('Köszönjük a vásárlást!')
-    }
-    var cartItems = document.getElementsByClassName('yourcart')[0]
-    while (cartItems.hasChildNodes()) {
-      cartItems.removeChild(cartItems.firstChild)
-    }
-    emptyCart()
   }
 
   function removeCartItem(event) {
@@ -122,10 +107,63 @@ $(document).ready(function(){
   function emptyCart() {
     if ($('.yourcart').children().length > 0) {
       $('.empty-cart').hide();
-      $('.purchase-button').removeClass('emptybutton');
+      $('.continue-button').removeClass('emptybutton');
     } else {
       $('.empty-cart').show();
-      $('.purchase-button').addClass('emptybutton');
+      $('.continue-button').addClass('emptybutton');
+      $('.order-page').hide();
+      $('.continue-button').show();
     }
   }
+//PURCHASE:
+  $('.continue-button').click(function(){
+    if ($('.yourcart').children().length == 0) {
+      alert('A kosár üres!')
+    } else {
+      $('.order-page').show();
+      $(this).hide();
+    }
+  })
+
+  $('.purchase-button').click(function(){
+    var fullName = $('input[name=full-name]').val();
+    var email = $('input[name=email]').val();
+    var phoneNumber = $('input[name=phone-number]').val();
+    var country = $('input[name=country]').val();
+    var zipCode = $('input[name=zip-code]').val();
+    var city = $('input[name=city]').val();
+    var addressOne = $('input[name=address-1]').val();
+    var addressTwo = $('input[name=address-2]').val();
+    var comment = $('input[name=comment]').val();
+
+    if (fullName && email && phoneNumber && country && zipCode && city && addressOne) {
+      alert('Köszönjük a vásárlást!')
+      var cartItems = document.getElementsByClassName('yourcart')[0]
+      while (cartItems.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild)
+      }
+      $('.order-page').hide();
+      $('.continue-button').show();
+      emptyCart()
+      $('.order-page input').val('');
+    } else {
+      alert('Kérjük mindent töltsön ki!');
+    }
+  });
+
+  $('.order-page input').change(function(){
+    var fullName = $('input[name=full-name]').val();
+    var email = $('input[name=email]').val();
+    var phoneNumber = $('input[name=phone-number]').val();
+    var country = $('input[name=country]').val();
+    var zipCode = $('input[name=zip-code]').val();
+    var city = $('input[name=city]').val();
+    var addressOne = $('input[name=address-1]').val();
+
+    if (fullName && email && phoneNumber && country && zipCode && city && addressOne) {
+      $('.purchase-button').removeClass('emptybutton');
+    } else {
+      $('.purchase-button').addClass('emptybutton');
+    }
+  })
 });
