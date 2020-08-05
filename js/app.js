@@ -1,10 +1,22 @@
 $(document).ready(function(){
+//NAV MENU ON PHONE:
+  $('.fa-bars').click(function(){
+    $(this).toggleClass('fa-times fa-bars');
+    $('.nav-menu').fadeToggle('fast');
+  });
+  $('.nav-menu a').click(function(){
+    $('.fa-times').toggleClass('fa-times fa-bars');
+    $('.nav-menu').fadeOut('fast');
+  });
 //JUMP ON PAGE:
   $('.products_button').click(function(){
     $("html, body").animate({scrollTop: $("#products").offset().top}, "slow");
   })
-  $('.cart').click(function(){
+  $('.cart, .cart_button').click(function(){
     $("html, body").animate({scrollTop: $("#cart").offset().top}, "slow");
+  })
+  $('.contact_button').click(function(){
+    $("html, body").animate({scrollTop: $("#contact").offset().top}, "slow");
   })
 //PRODUCT PHOTO VIEWER:
   $('button[name=next]').click(function(){
@@ -18,6 +30,14 @@ $(document).ready(function(){
     imageSlider.find('.active').prependTo(imageSlider);
     imageSlider.find('img').removeClass('active');
     imageSlider.find('img').last().addClass('active');
+  });
+//BIG PHOTO:
+  $('.product img').click(function(){
+    $('.big-photo-box').fadeIn('fast');
+    $('.big-photo').attr('src', $(this).attr('src'));
+  });
+  $('.big-photo-box').click(function(){
+    $(this).fadeOut('fast');
   });
 //COLOR SELECTER:
   $('.select-color-button').click(function(){
@@ -129,14 +149,11 @@ $(document).ready(function(){
     var fullName = $('input[name=full-name]').val();
     var email = $('input[name=email]').val();
     var phoneNumber = $('input[name=phone-number]').val();
-    var country = $('input[name=country]').val();
-    var zipCode = $('input[name=zip-code]').val();
-    var city = $('input[name=city]').val();
-    var addressOne = $('input[name=address-1]').val();
-    var addressTwo = $('input[name=address-2]').val();
-    var comment = $('input[name=comment]').val();
+    var organization = $('input[name=organization]').val();
+    var synagogueAddress = $('input[name=synagogue-address]').val();
+    var message = $('input[name=message]').val();
 
-    if (fullName && email && phoneNumber && country && zipCode && city && addressOne) {
+    if (fullName && email && phoneNumber && organization && synagogueAddress) {
       alert('Köszönjük a vásárlást!')
       var cartItems = document.getElementsByClassName('yourcart')[0]
       while (cartItems.hasChildNodes()) {
@@ -146,6 +163,7 @@ $(document).ready(function(){
       $('.continue-button').show();
       emptyCart()
       $('.order-page input').val('');
+      $('.purchase-button').addClass('emptybutton');
     } else {
       alert('Kérjük mindent töltsön ki!');
     }
@@ -155,12 +173,11 @@ $(document).ready(function(){
     var fullName = $('input[name=full-name]').val();
     var email = $('input[name=email]').val();
     var phoneNumber = $('input[name=phone-number]').val();
-    var country = $('input[name=country]').val();
-    var zipCode = $('input[name=zip-code]').val();
-    var city = $('input[name=city]').val();
-    var addressOne = $('input[name=address-1]').val();
+    var organization = $('input[name=organization]').val();
+    var synagogueAddress = $('input[name=synagogue-address]').val();
+    var message = $('input[name=message]').val();
 
-    if (fullName && email && phoneNumber && country && zipCode && city && addressOne) {
+    if (fullName && email && phoneNumber && organization && synagogueAddress) {
       $('.purchase-button').removeClass('emptybutton');
     } else {
       $('.purchase-button').addClass('emptybutton');

@@ -24,6 +24,7 @@
 		margin-top: calc(5rem + 30vh);
 		font-size: 0;
 		padding: 0 1rem;
+		position: relative;
 	}
 	.product {
 		width: calc(100% / 2 - 2vw);
@@ -73,10 +74,6 @@
 		border: none;
 		box-shadow: 0 0 2px gray;
 	}
-	.logo {
-		width: 60%;
-		margin: 0 20%;
-	}
 	.image-box {
 		position: relative;
 	}
@@ -84,13 +81,11 @@
 		position: absolute;
 		height: 100%;
 		border: none;
-		background-color: rgba(0,0,0,.0);
+		background-color: rgba(255,255,255,.0);
 		transition: 0.2s ease-in-out;
 		font-size: 2rem;
 		cursor: pointer;
 		padding: 0.5rem;
-		color: rgba(0,0,0,.7);
-		text-shadow: 0 0 10px gray;
 	}
 	button[name=next] {
 		right: 0;
@@ -270,6 +265,28 @@
 	.purchase-button {
 		margin-top: 1rem;
 	}
+	.small-print {
+		font-size: 0.9rem !important;
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+	}
+/*==========BIG PHOTO==========*/
+	.big-photo-box {
+		display: none;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left:0;
+		z-index: 5;
+		background-color: rgba(0,0,0,.3);
+	}
+	.big-photo {
+		width: 90vw;
+		position: absolute;
+		left: 5vw;
+		top: calc(50% - 36vw);
+	}
 /*==========MEDIA QUERY==========*/
 	@media screen and (min-width: 768px) {
 		h1 {
@@ -287,10 +304,6 @@
 		.cart-row {
 			width: 50%;
 			height: 5rem;
-		}
-		.logo {
-			width: 50%;
-			margin: -3rem 25% -2rem;
 		}
 		.cart-item-title-box {
 			width: calc(100% - 17rem - 9%);
@@ -362,17 +375,10 @@
 			transition: 0.2s ease-in-out;
 		}
 		button[name=next]:hover, button[name=prev]:hover {
-			background-color: rgba(0,0,0,.1);
+			background-color: rgba(255,255,255,.8);
 			transition: 0.2s ease-in-out;
 			padding: 1rem;
-			color: rgba(0,0,0,.8);
-		}
-		button[name=next], button[name=prev] {
-			color: rgba(255,255,255,.5);
-		}
-		.logo {
-			width: 25rem;
-			margin-left: calc(50% - 12.5rem);
+			margin: 0;
 		}
 		.colors {
 			width: 20rem;
@@ -381,6 +387,12 @@
 			width: 20rem;
 			margin-left: calc(50% - 10rem);
 			margin-right: 0;
+		}
+		.big-photo {
+			height: 70vh;
+			width: auto;
+			left: calc(50% - 43.75vh);
+			top: 15vh;
 		}
   }
 	@media screen and (min-width: 1440px) {

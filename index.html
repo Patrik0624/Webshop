@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Shlichus termékek</title>
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -15,8 +15,15 @@
   </head>
   <body>
     <nav>
-      <a class="products_button" href="#">Termékek</a>
+      <i class="fas fa-bars"></i>
       <a class="cart" href="#"><i class="fas fa-shopping-cart"></i></a>
+      <a class="products_button" href="#">Termékek</a>
+      <div class="nav-menu">
+        <a class="products_button" href="#">Termékek</a>
+        <a class="cart_button" href="#">Kosár</a>
+        <a class="contact_button" href="#">Kapcsolat</a>
+      </div>
+      <img class="logo" src="assets/logo.png" alt="">
     </nav>
     <header>
       <h1>Shlichus termékek</h1>
@@ -25,8 +32,8 @@
       <a id="products" href="#"></a>
       <div class="product eloaldaskartya">
         <div class="image-box">
-          <button type="button" name="prev"><i class="fas fa-angle-left"></i></button>
-          <button type="button" name="next"><i class="fas fa-angle-right"></i></button>
+          <button type="button" name="prev"><i class="fas fa-caret-left"></i></button>
+          <button type="button" name="next"><i class="fas fa-caret-right"></i></button>
           <div class="image-slider">
             <img class="product-img active" src="assets\Products\Elő áldás kártya\eloaldas.JPG" alt="">
             <img class="product-img" src="assets\Products\Elő áldás kártya\eloaldaskek.JPG" alt="">
@@ -37,8 +44,8 @@
       </div>
       <div class="product gyertyatarto">
         <div class="image-box">
-          <button type="button" name="prev"><i class="fas fa-angle-left"></i></button>
-          <button type="button" name="next"><i class="fas fa-angle-right"></i></button>
+          <button type="button" name="prev"><i class="fas fa-caret-left"></i></button>
+          <button type="button" name="next"><i class="fas fa-caret-right"></i></button>
           <div class="image-slider">
             <img class="product-img active" src="assets\Products\Gyertyatartó\gyertyatarto2.jpeg" alt="">
             <img class="product-img" src="assets\Products\Gyertyatartó\gyertyatarto1.jpeg" alt="">
@@ -49,8 +56,8 @@
       </div>
       <div class="product nidamikvefuzet">
         <div class="image-box">
-          <button type="button" name="prev"><i class="fas fa-angle-left"></i></button>
-          <button type="button" name="next"><i class="fas fa-angle-right"></i></button>
+          <button type="button" name="prev"><i class="fas fa-caret-left"></i></button>
+          <button type="button" name="next"><i class="fas fa-caret-right"></i></button>
           <div class="image-slider">
             <img class="product-img active" src="assets\Products\Nida, Mikve füzet\nidamikve1.jpeg" alt="">
             <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve2.png" alt="">
@@ -70,7 +77,6 @@
         <button class="add-cart-button" type="button" name="kosárba">Kosárba <i class="fas fa-shopping-cart"></i></button>
       </div>
     </div>
-    <img class="logo" src="assets/Emih-logo.png" alt="">
     <div class="thecart">
       <a id="cart"></a>
       <h2>Kosár</h2>
@@ -92,22 +98,32 @@
       <input type="text" name="email" placeholder="Email">
       <p>Telefonszám* :</p>
       <input type="text" name="phone-number" placeholder="Telefonszám">
-      <p>Ország* :</p>
-      <input type="text" name="country" placeholder="Ország">
-      <p>Irányítószám* :</p>
-      <input type="text" name="zip-code" placeholder="Irányítószám">
-      <p>Város* :</p>
-      <input type="text" name="city" placeholder="Város">
-      <p>Címsor 1.* :</p>
-      <input type="text" name="address-1" placeholder="Cím 1. sora">
-      <p>Címsor 2. (nem kötelező):</p>
-      <input type="text" name="address-2" placeholder="Cím 2. sora">
-      <p>Megjegyzés (nem kötelező):</p>
-      <input type="text" name="comment" placeholder="Megjegyzés">
+      <p>Szervezet* :</p>
+      <input type="text" name="organization" placeholder="Szervezet">
+      <p>Zsinagóga címe* :</p>
+      <input type="text" name="synagogue-address" placeholder="Zsinagóga címe">
+      <p>Üzenet:</p>
+      <input type="text" name="message" placeholder="Üzenet (max. 1000 karakter)" maxlength="1000">
+      <p class="small-print">* A csillaggal megjelölt mezők kitöltése kötelező.</p>
       <button class="purchase-button emptybutton" type="button" name="button">Vásárlás</button>
     </div>
     <footer>
+      <div class="contact">
+        <a href="#" id="contact"></a>
+        <h2>Kapcsolat</h2>
+        <div class="email">
+          <p class="icon"><i class="fas fa-envelope"></i></p>
+          <a href="mailto: sebestyen.greta@zsido.com">sebestyen.greta@zsido.com</a>
+        </div>
+        <div class="phone">
+          <p class="icon"><i class="fas fa-phone"></i></p>
+          <a href="call: +36209603737">+36209603737</a>
+        </div>
+      </div>
       <p>@2020 Shlichus Termékek. Minden jog fenntartva.</p>
     </footer>
+    <div class="big-photo-box">
+      <img class="big-photo">
+    </div>
   </body>
 </html>
