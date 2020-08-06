@@ -219,8 +219,6 @@ $(document).ready(function(){
     From : "shlischus.termekek@gmail.com",
     Subject : " Új Rendelés",
     Body : email
-    }).then(
-      message => alert(message)
-    );
+    })
   }
 });
