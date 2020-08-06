@@ -147,14 +147,42 @@ $(document).ready(function(){
 
   $('.purchase-button').click(function(){
     var fullName = $('input[name=full-name]').val();
-    var email = $('input[name=email]').val();
+    var emailAddress = $('input[name=email]').val();
     var phoneNumber = $('input[name=phone-number]').val();
     var organization = $('input[name=organization]').val();
     var synagogueAddress = $('input[name=synagogue-address]').val();
     var message = $('input[name=message]').val();
 
+    var firstProduct = $('.cart-row .cart-item-title').eq(0).text();
+    var secondProduct = $('.cart-row .cart-item-title').eq(1).text();
+    var thirdProduct = $('.cart-row .cart-item-title').eq(2).text();
+    var fourthProduct = $('.cart-row .cart-item-title').eq(3).text();
+
+    var firstProductValue = $('.cart-row input').eq(0).val();
+    var secondProductValue = $('.cart-row input').eq(1).val();
+    var thirdProductValue = $('.cart-row input').eq(2).val();
+    var fourthProductValue = $('.cart-row input').eq(3).val();
+
+    var email = `
+      <h3>Rendelés adatai:</h3>
+      <ul>
+        <li>Név: ` + fullName + `</li>
+        <li>Email: ` + emailAddress + `</li>
+        <li>Telefonszám: ` + phoneNumber + `</li>
+        <li>Szervezet: ` + organization + `</li>
+        <li>Zsinagóga címe: ` + synagogueAddress + `</li>
+      </ul>
+      <h3>Termék(ek):</h3>
+      <p>` + firstProduct + ` ` + firstProductValue + `</p>
+      <p>` + secondProduct + ` ` + secondProductValue + `</p>
+      <p>` + thirdProduct + ` ` + thirdProductValue + `</p>
+      <p>` + fourthProduct + ` ` + fourthProductValue + `</p>
+      <h3>Üzenet:</h3>
+      <p>` + message + `</p>`
+
     if (fullName && email && phoneNumber && organization && synagogueAddress) {
       alert('Köszönjük a vásárlást!')
+      sendEmail(email, emailAddress)
       var cartItems = document.getElementsByClassName('yourcart')[0]
       while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
@@ -183,4 +211,16 @@ $(document).ready(function(){
       $('.purchase-button').addClass('emptybutton');
     }
   })
+
+  function sendEmail(email, emailAddress){
+    Email.send({
+    SecureToken: "fdcbd957-d580-455f-82b1-dad344c82f07",
+    To : "sebestyen.greta@zsido.com, " + emailAddress,
+    From : "shlischus.termekek@gmail.com",
+    Subject : " Új Rendelés",
+    Body : email
+    }).then(
+      message => alert(message)
+    );
+  }
 });
