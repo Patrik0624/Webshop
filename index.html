@@ -31,49 +31,18 @@
     </header>
     <div class="products">
       <a id="products" href="#"></a>
-      <div class="product eloaldaskartya">
-        <div class="image-box">
-          <button type="button" name="prev"><i class="fas fa-caret-left"></i></button>
-          <button type="button" name="next"><i class="fas fa-caret-right"></i></button>
-          <div class="image-slider">
-            <img class="product-img active" src="assets\Products\Elő áldás kártya\eloaldas.JPG" alt="">
-            <img class="product-img" src="assets\Products\Elő áldás kártya\eloaldaskek.JPG" alt="">
-          </div>
-        </div>
+      <div class="product eloaldaskartya" id="eloetel">
+        <img class="product-img" src="assets\Products\Elő áldás kártya\eloaldas.JPG" alt="">
         <h3 class="product-title">Előétel áldás kártya</h3>
         <button class="select-color-button" type="button" name="kosárba">Kosárba <i class="fas fa-shopping-cart"></i></button>
       </div>
-      <div class="product gyertyatarto">
-        <div class="image-box">
-          <button type="button" name="prev"><i class="fas fa-caret-left"></i></button>
-          <button type="button" name="next"><i class="fas fa-caret-right"></i></button>
-          <div class="image-slider">
-            <img class="product-img active" src="assets\Products\Gyertyatartó\gyertyatarto2.jpeg" alt="">
-            <img class="product-img" src="assets\Products\Gyertyatartó\gyertyatarto1.jpeg" alt="">
-          </div>
-        </div>
+      <div class="product gyertyatarto" id="gyertyatarto">
+        <img class="product-img" src="assets\Products\Gyertyatartó\gyertyatarto2.jpeg" alt="">
         <h3 class="product-title">Szábeszi Gyertyatartó</h3>
         <button class="add-cart-button" type="button" name="kosárba">Kosárba <i class="fas fa-shopping-cart"></i></button>
       </div>
-      <div class="product nidamikvefuzet">
-        <div class="image-box">
-          <button type="button" name="prev"><i class="fas fa-caret-left"></i></button>
-          <button type="button" name="next"><i class="fas fa-caret-right"></i></button>
-          <div class="image-slider">
-            <img class="product-img active" src="assets\Products\Nida, Mikve füzet\nidamikve1.jpeg" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve2.png" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve3.png" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve4.png" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve5.png" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve6.jpeg" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve7.jpeg" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve8.png" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve9.png" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve10.png" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve11.png" alt="">
-            <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve12.png" alt="">
-          </div>
-        </div>
+      <div class="product nidamikvefuzet" id="fuzet">
+        <img class="product-img" src="assets\Products\Nida, Mikve füzet\nidamikve1.jpeg" alt="">
         <h3 class="product-title">Nida, Mikve füzet</h3>
         <button class="add-cart-button" type="button" name="kosárba">Kosárba <i class="fas fa-shopping-cart"></i></button>
       </div>
@@ -98,7 +67,7 @@
       <p>Email-cím* :</p>
       <input type="text" name="email" placeholder="Email">
       <p>Telefonszám* :</p>
-      <input type="text" name="phone-number" placeholder="Telefonszám">
+      <input type="number" name="phone-number" placeholder="Telefonszám">
       <p>Szervezet* :</p>
       <input type="text" name="organization" placeholder="Szervezet">
       <p>Zsinagóga címe* :</p>
@@ -123,8 +92,39 @@
       </div>
       <p>@2020 Shlichus Termékek. Minden jog fenntartva.</p>
     </footer>
-    <div class="big-photo-box">
-      <img class="big-photo">
+    <div class="big-photo-box eloetel-photo">
+      <div class="photo-box">
+        <img class="big-photo" src="assets/Products/Elő áldás kártya/eloaldaskek.JPG">
+        <img class="big-photo active" src="assets/Products/Elő áldás kártya/eloaldas.JPG">
+      </div>
+      <i class="fas fa-chevron-left prev"></i>
+      <i class="fas fa-chevron-right next"></i>
+    </div>
+    <div class="big-photo-box gyertyatarto-photo">
+      <div class="photo-box">
+        <img class="big-photo" src="assets/Products/Gyertyatartó/gyertyatarto1.jpeg">
+        <img class="big-photo active" src="assets/Products/Gyertyatartó/gyertyatarto2.jpeg">
+      </div>
+      <i class="fas fa-chevron-left prev"></i>
+      <i class="fas fa-chevron-right next"></i>
+    </div>
+    <div class="big-photo-box fuzet-photo">
+      <div class="photo-box">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve12.png">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve11.png">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve10.png">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve9.png">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve8.png">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve7.jpeg">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve6.jpeg">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve5.png">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve4.png">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve3.png">
+        <img class="big-photo" src="assets/Products/Nida, Mikve füzet/nidamikve2.png">
+        <img class="big-photo active" src="assets/Products/Nida, Mikve füzet/nidamikve1.jpeg">
+      </div>
+      <i class="fas fa-chevron-left prev"></i>
+      <i class="fas fa-chevron-right next"></i>
     </div>
   </body>
 </html>

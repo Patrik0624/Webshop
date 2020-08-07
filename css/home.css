@@ -40,7 +40,6 @@
     top: -5rem;
 	}
 	.product img {
-		display: none;
 		width: 100%;
 		box-shadow: 0 0 2px gray;
 		cursor: pointer;
@@ -158,11 +157,11 @@
 		border-radius: 10px;
 		border: none;
 		box-shadow: 0 0 2px gray;
-		padding-left: 1rem;
 		font-size: 1.2rem;
 		vertical-align: top;
 		margin-top: 1rem;
 		position: absolute;
+		text-align: center;
 		right: 52%;
 		bottom: 1rem;
 	}
@@ -185,6 +184,7 @@
 		position: absolute;
 		left: 52%;
 		bottom: 1rem;
+		text-align: center;
 	}
 	.purchase-button, .continue-button {
 		width: 7rem;
@@ -288,6 +288,31 @@
 		left: 5vw;
 		top: calc(50% - 36vw);
 	}
+	.other-photos {
+		display: none;
+	}
+	.photo-box img {
+		display: none;
+	}
+	.active {
+		display: block;
+	}
+	.next, .prev {
+		top: calc(50% - 1.35rem);
+		padding: 0.7rem;
+		background-color: rgba(255,255,255,.5);
+		border-radius: 10px;
+		transition: 0.15s ease-in-out;
+		font-size: 2rem;
+		cursor: pointer;
+		position: absolute;
+	}
+	.next {
+		right: calc(50% - 40vw - 0.5rem);
+	}
+	.prev {
+		left: calc(50% - 40vw - 0.5rem);
+	}
 /*==========MEDIA QUERY==========*/
 	@media screen and (min-width: 768px) {
 		h1 {
@@ -332,6 +357,17 @@
 			width: 40%;
 			margin-left: 30%;
 			margin-right: 30%;
+		}
+		.next, .prev {
+			top: calc(50% - 2.25rem);
+			padding: 1rem;
+			font-size: 2.5rem;
+		}
+		.next {
+			right: calc(50% - 40vw - 1rem);
+		}
+		.prev {
+			left: calc(50% - 40vw - 1rem);
 		}
 	}
   @media screen and (min-width: 1024px) {
@@ -394,6 +430,18 @@
 			width: auto;
 			left: calc(50% - 43.75vh);
 			top: 15vh;
+		}
+		.next {
+			right: calc(50% - 43.75vh + 1rem);
+		}
+		.prev {
+			left: calc(50% - 43.75vh + 1rem);
+		}
+		.next:hover, .prev:hover {
+			padding: 1.3rem;
+			background-color: rgba(255,255,255,.8);
+			transition: 0.15s ease-in-out;
+			margin-top: -0.3rem;
 		}
   }
 	@media screen and (min-width: 1440px) {

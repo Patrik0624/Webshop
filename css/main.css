@@ -45,6 +45,14 @@ table {
 button:focus {
 	outline: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
 /*==========COLORS==========*/
 	/*DARK BLUE = rgb(1, 49, 72)*/
 	/*LIGHT BLUE = rgb(123, 193, 203)*/

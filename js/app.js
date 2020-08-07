@@ -18,26 +18,27 @@ $(document).ready(function(){
   $('.contact_button').click(function(){
     $("html, body").animate({scrollTop: $("#contact").offset().top}, "slow");
   })
-//PRODUCT PHOTO VIEWER:
-  $('button[name=next]').click(function(){
-    var imageSlider = $(this).siblings('.image-slider');
-    imageSlider.find('.active').appendTo(imageSlider);
-    imageSlider.find('img').removeClass('active');
-    imageSlider.find('img').first().addClass('active');
-  });
-  $('button[name=prev]').click(function(){
-    var imageSlider = $(this).siblings('.image-slider');
-    imageSlider.find('.active').prependTo(imageSlider);
-    imageSlider.find('img').removeClass('active');
-    imageSlider.find('img').last().addClass('active');
-  });
 //BIG PHOTO:
   $('.product img').click(function(){
-    $('.big-photo-box').fadeIn('fast');
-    $('.big-photo').attr('src', $(this).attr('src'));
+    var id = $(this).parent().attr('id');
+    var thisClass = id + '-photo';
+    $('.' + thisClass).fadeIn('fast');
   });
-  $('.big-photo-box').click(function(){
-    $(this).fadeOut('fast');
+  $('.next').click(function(){
+    var photoBox = $(this).siblings('.photo-box');
+    photoBox.find('img').last().prependTo(photoBox);
+    photoBox.find('img').removeClass('active');
+    photoBox.find('img').last().addClass('active');
+  });
+  $('.prev').click(function(){
+    var photoBox = $(this).siblings('.photo-box');
+    photoBox.find('img').first().appendTo(photoBox);
+    photoBox.find('img').removeClass('active');
+    photoBox.find('img').last().addClass('active');
+  });
+  $(".big-photo-box").click(function(e){
+    if(e.target != this) return;
+    $(this).fadeOut("fast");
   });
 //COLOR SELECTER:
   $('.select-color-button').click(function(){
@@ -81,8 +82,10 @@ $(document).ready(function(){
 
   function quantityChanged(event) {
     var input = event.target
-    if (isNaN(input.value) || input.value <= 0 || input.value > 500) {
-      input.value = 1
+    if (isNaN(input.value) || input.value <= 0) {
+      input.value = 1;
+    } else if (input.value > 500) {
+      input.value = 500;
     }
   }
 
@@ -180,7 +183,7 @@ $(document).ready(function(){
       <h3>Üzenet:</h3>
       <p>` + message + `</p>`
 
-    if (fullName && email && phoneNumber && organization && synagogueAddress) {
+    if (fullName.length >= 5 && email.includes('@') && email.length >= 5 && phoneNumber.length >= 11 && organization.length >= 5 && synagogueAddress.length >= 5 ) {
       alert('Köszönjük a vásárlást!')
       sendEmail(email, emailAddress)
       var cartItems = document.getElementsByClassName('yourcart')[0]
@@ -193,11 +196,11 @@ $(document).ready(function(){
       $('.order-page input').val('');
       $('.purchase-button').addClass('emptybutton');
     } else {
-      alert('Kérjük mindent töltsön ki!');
+      alert('Kérjük mindent helyesen töltsön ki!');
     }
   });
 
-  $('.order-page input').change(function(){
+  $('.order-page input').keydown(function(){
     var fullName = $('input[name=full-name]').val();
     var email = $('input[name=email]').val();
     var phoneNumber = $('input[name=phone-number]').val();
@@ -205,7 +208,7 @@ $(document).ready(function(){
     var synagogueAddress = $('input[name=synagogue-address]').val();
     var message = $('input[name=message]').val();
 
-    if (fullName && email && phoneNumber && organization && synagogueAddress) {
+    if (fullName.length >= 5 && email.includes('@') && email.length >= 5 && phoneNumber.length >= 11 && organization.length >= 5 && synagogueAddress.length >= 5 ) {
       $('.purchase-button').removeClass('emptybutton');
     } else {
       $('.purchase-button').addClass('emptybutton');
