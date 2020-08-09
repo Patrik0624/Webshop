@@ -18,6 +18,9 @@ $(document).ready(function(){
   $('.contact_button').click(function(){
     $("html, body").animate({scrollTop: $("#contact").offset().top}, "slow");
   })
+  $('.logo').click(function(){
+    $("html, body").animate({scrollTop: 0}, "slow");
+  })
 //BIG PHOTO:
   $('.product img').click(function(){
     var id = $(this).parent().attr('id');
@@ -48,10 +51,34 @@ $(document).ready(function(){
     $(this).fadeOut('fast');
   });
   $('button[name=mallow]').click(function(){
-    addItemToCart('Előétel áldás kártya mályva', 'assets/Products/Elő áldás kártya/eloaldas.JPG');
+    var shopItem = $(this).parent().parent().siblings('.products').children('.eloaldaskartya');
+    var imageSrc = 'assets/Products/Elő áldás kártya/eloaldas.JPG';
+    var title = 'Előétel áldás kártya mályva';
+    var quantity = $(shopItem).find('.quantity-selector').val();
+    addItemToCart(title, imageSrc, quantity);
   });
   $('button[name=blue]').click(function(){
-    addItemToCart('Előétel áldás kártya kék', 'assets/Products/Elő áldás kártya/eloaldaskek.JPG');
+    var shopItem = $(this).parent().parent().siblings('.products').children('.eloaldaskartya');
+    var imageSrc = 'assets/Products/Elő áldás kártya/eloaldaskek.JPG';
+    var title = 'Előétel áldás kártya kék';
+    var quantity = $(shopItem).find('.quantity-selector').val();
+    addItemToCart(title, imageSrc, quantity);
+  });
+//ADD TO CART:
+  $('.add-cart-button').click(function(){
+    var shopItem = $(this).parent();
+    var imageSrc = $(shopItem).find('.product-img').attr('src');
+    var title = $(shopItem).find('.product-title').text();
+    var quantity = $(shopItem).find('.quantity-selector').val();
+    addItemToCart(title, imageSrc, quantity);
+  })
+  $('.quantity-selector').change(function(){
+    var inputVal = $(this).val();
+    if (inputVal <= 1) {
+      $(this).val(1);
+    } else if (inputVal > 500) {
+      $(this).val(500);
+    }
   });
 //CART:
   if (document.readyState == 'loading') {
@@ -72,12 +99,6 @@ $(document).ready(function(){
       var input = quantityInputs[i]
       input.addEventListener('change', quantityChanged)
     }
-
-    var addToCartButtons = $('.add-cart-button')
-    for (var i = 0; i < addToCartButtons.length; i++) {
-      var button = addToCartButtons[i]
-      button.addEventListener('click', addToCartClicked)
-    }
   }
 
   function quantityChanged(event) {
@@ -95,15 +116,7 @@ $(document).ready(function(){
     emptyCart()
   }
 
-  function addToCartClicked(event) {
-    var button = event.target
-    var shopItem = button.parentElement
-    var title = shopItem.getElementsByClassName('product-title')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('product-img')[0].src
-    addItemToCart(title, imageSrc)
-  }
-
-  function addItemToCart(title, imageSrc) {
+  function addItemToCart(title, imageSrc, quantity) {
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     var cartItems = document.getElementsByClassName('yourcart')[0]
@@ -119,13 +132,14 @@ $(document).ready(function(){
     <div class="cart-item-title-box">
       <h3 class="cart-item-title">${title}</h3>
     </div>
-    <input class="cart-quantity-input" type="number" value="1">
+    <input class="cart-quantity-input" type="number" value="${quantity}">
     <button class="removeItem" type="button" name="button">Törlés</button>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('removeItem')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
     emptyCart()
+    $('.quantity-selector').val(1);
 }
   function emptyCart() {
     if ($('.yourcart').children().length > 0) {

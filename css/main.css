@@ -101,6 +101,7 @@ input[type=number] {
 		position: absolute;
 		left: calc(50% - 2rem);
 		top: calc(50% - 2rem);
+		cursor: pointer;
 	}
 	.fa-bars, .fa-times {
 		font-size: 2rem;
