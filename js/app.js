@@ -64,6 +64,23 @@ $(document).ready(function(){
     var quantity = $(shopItem).find('.quantity-selector').val();
     addItemToCart(title, imageSrc, quantity);
   });
+//QUANTITY PLUS & MINUS:
+  $('.fa-minus').click(function(){
+    var minus = +$(this).parent().siblings(".quantity-selector").val() - 1;
+    $(this).parent().siblings(".quantity-selector").val(minus);
+  });
+  $('.fa-plus').click(function(){
+    var plus = +$(this).parent().siblings(".quantity-selector").val() + 1;
+    $(this).parent().siblings(".quantity-selector").val(plus);
+  });
+  $('.fa-minus, .fa-plus').click(function(){
+    var inputVal = $(this).parent().siblings(".quantity-selector").val();
+    if (inputVal <= 1) {
+      $(this).parent().siblings(".quantity-selector").val(1);
+    } else if (inputVal > 500) {
+      $(this).parent().siblings(".quantity-selector").val(500);
+    }
+  });
 //ADD TO CART:
   $('.add-cart-button').click(function(){
     var shopItem = $(this).parent();
@@ -170,16 +187,6 @@ $(document).ready(function(){
     var synagogueAddress = $('input[name=synagogue-address]').val();
     var message = $('input[name=message]').val();
 
-    var firstProduct = $('.cart-row .cart-item-title').eq(0).text();
-    var secondProduct = $('.cart-row .cart-item-title').eq(1).text();
-    var thirdProduct = $('.cart-row .cart-item-title').eq(2).text();
-    var fourthProduct = $('.cart-row .cart-item-title').eq(3).text();
-
-    var firstProductValue = $('.cart-row input').eq(0).val();
-    var secondProductValue = $('.cart-row input').eq(1).val();
-    var thirdProductValue = $('.cart-row input').eq(2).val();
-    var fourthProductValue = $('.cart-row input').eq(3).val();
-
     var email = `
       <h3>Rendelés adatai:</h3>
       <ul>
@@ -189,13 +196,18 @@ $(document).ready(function(){
         <li>Szervezet: ` + organization + `</li>
         <li>Zsinagóga címe: ` + synagogueAddress + `</li>
       </ul>
-      <h3>Termék(ek):</h3>
-      <p>` + firstProduct + ` ` + firstProductValue + `</p>
-      <p>` + secondProduct + ` ` + secondProductValue + `</p>
-      <p>` + thirdProduct + ` ` + thirdProductValue + `</p>
-      <p>` + fourthProduct + ` ` + fourthProductValue + `</p>
       <h3>Üzenet:</h3>
-      <p>` + message + `</p>`
+      <p>` + message + `</p>
+      <h3>Termék(ek):</h3>`;
+
+    var i = 1;
+    while (i <= $('.cart-item-title').length) {
+      var productTitleInCart = $('.cart-row .cart-item-title').eq(i - 1).text();
+      var productValueInCart = $('.cart-row input').eq(i - 1).val();
+      var productInCart = `<p> - ` + productTitleInCart + ` x` + productValueInCart + `</p>`;
+      email += productInCart;
+      i++;
+    }
 
     if (fullName.length >= 5 && email.includes('@') && email.length >= 5 && phoneNumber.length >= 11 && organization.length >= 5 && synagogueAddress.length >= 5 ) {
       alert('Köszönjük a vásárlást!')
@@ -228,14 +240,14 @@ $(document).ready(function(){
       $('.purchase-button').addClass('emptybutton');
     }
   })
-
+  //EMAIL: sebestyen.greta@zsido.com
   function sendEmail(email, emailAddress){
     Email.send({
-    SecureToken: "fdcbd957-d580-455f-82b1-dad344c82f07",
-    To : "sebestyen.greta@zsido.com, " + emailAddress,
+    SecureToken : "8fff32d4-543f-41f7-9088-50bc525106b3",
+    To : 'sebestyen.greta@zsido.com, ' + emailAddress,
     From : "shlischus.termekek@gmail.com",
-    Subject : " Új Rendelés",
+    Subject : "Új rendelés",
     Body : email
-    })
+  })
   }
 });
