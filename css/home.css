@@ -92,6 +92,7 @@
 		width: 9rem;
 		margin: auto;
 		margin-bottom: 1rem;
+		font-size: 0;
 	}
 	.quantity-input-box button {
 		border: none;
@@ -273,7 +274,8 @@
 	.order-page {
 		display: none;
 		width: 100%;
-		margin-bottom: 3rem;
+		padding-bottom: 3rem;
+		background-color: rgba(236, 195, 133,.5);
 	}
 	.order-page p {
 		text-align: center;
