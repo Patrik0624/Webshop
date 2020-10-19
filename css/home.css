@@ -28,10 +28,9 @@
 		background-color: rgba(236, 195, 133,.5);
 	}
 	.product {
-		width: calc(100% / 2 - 2vw);
+		width: calc(100% - 30vw);
 		display: inline-block;
-		margin: 3vw 1vw;
-		padding: 2vw;
+		margin: 6vw 15vw;
 		vertical-align: top;
 		position: relative;
 	}
@@ -49,9 +48,9 @@
 		display: block !important;
 	}
 	.product h3 {
-		margin: 1rem 0;
-		font-size: 1.2rem;
-		line-height: 1.4rem;
+		margin: 0.5rem 0;
+		font-size: 1.5rem;
+		line-height: 1.7rem;
 		text-align: center;
 	}
 	button[name=kosárba] {
@@ -89,20 +88,19 @@
 	  -moz-appearance: textfield;
 	}
 	.quantity-input-box {
-		width: 9rem;
+		width: 100%;
 		margin: auto;
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
 		font-size: 0;
 	}
 	.quantity-input-box button {
 		border: none;
 		background-color: rgba(0,0,0,.0);
-		padding: none;
 		display: inline-block;
 		padding: 0.4rem 1rem;
 	}
 	button[name=quantity-minus] {
-		padding-left: 0;
+		padding-left: calc(50% - 4.7rem);
 	}
 	button[name=quantity-plus] {
 		padding-right: 0;
@@ -357,6 +355,27 @@
 		.colors p, .quantity-box p {
 			font-size: 1rem;
 		}
+		.product {
+			width: calc(100% / 2 - 2vw);
+			margin: 3vw 1vw;
+		}
+		.product h3 {
+			font-size: 1.2rem;
+			line-height: 1.4rem;
+			margin: 1rem 0;
+		}
+		.product {
+			padding: 2vw;
+		}
+		.quantity-input-box button {
+			padding: 0.4rem 0.5rem;
+		}
+		button[name=quantity-minus] {
+			padding-left: calc(50% - 4.2rem);
+		}
+		.quantity-input-box {
+			margin-bottom: 1rem;
+		}
 	}
 	@media screen and (min-width: 768px) {
 		h1 {
@@ -367,6 +386,12 @@
 			width: calc(100% / 3 - 4vw);
 			margin: 3vw 2vw;
 			padding: 2vw;
+		}
+		.quantity-input-box button {
+			padding: 0.4rem 1rem;
+		}
+		button[name=quantity-minus] {
+			padding-left: calc(50% - 4.7rem);
 		}
 		.thecart h2::after {
 			width: 55%;
