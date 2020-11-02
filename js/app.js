@@ -209,14 +209,14 @@ $(document).ready(function(){
       i++;
     }
 
-    if (fullName.length >= 5 && email.includes('@') && email.length >= 5 && phoneNumber.length >= 11 && organization.length >= 5 && synagogueAddress.length >= 5 ) {
+    if (fullName.length >= 5 && email.includes('@') && email.length >= 5 && phoneNumber.length >= 8 && organization.length >= 5 && synagogueAddress.length >= 5 ) {
       alert('Köszönjük a vásárlást!')
-      sendEmail(email, emailAddress)
       var cartItems = document.getElementsByClassName('yourcart')[0]
       while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
       }
       $('.order-page').hide();
+      sendEmail(email, emailAddress);
       $('.continue-button').show();
       emptyCart()
       $('.order-page input').val('');
@@ -234,7 +234,7 @@ $(document).ready(function(){
     var synagogueAddress = $('input[name=synagogue-address]').val();
     var message = $('input[name=message]').val();
 
-    if (fullName.length >= 5 && email.includes('@') && email.length >= 5 && phoneNumber.length >= 11 && organization.length >= 5 && synagogueAddress.length >= 5 ) {
+    if (fullName.length >= 5 && email.includes('@') && email.length >= 5 && phoneNumber.length >= 8 && organization.length >= 5 && synagogueAddress.length >= 5 ) {
       $('.purchase-button').removeClass('emptybutton');
     } else {
       $('.purchase-button').addClass('emptybutton');

@@ -289,6 +289,11 @@
 		border: none;
 		box-shadow: 0 0 2px gray;
 	}
+	.order-page input::-webkit-outer-spin-button,
+	.order-page input::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
 	.purchase-button {
 		margin-top: 1rem;
 	}
