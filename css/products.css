@@ -3,7 +3,7 @@
   display: block;
   width: 75%;
   height: 2px;
-  background-color: black;
+  background-color: rgba(50,50,50);
   margin: auto;
 }
 

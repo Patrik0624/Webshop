@@ -1,9 +1,9 @@
 $(document).ready(function(){
 //OTHER:
   function backToNormal(){
-    $('.tisre-folder').siblings().hide();
+    $('.default-folder').siblings().hide();
     $('button[name=back-to-folder]').hide();
-    $('.products, .thecart, .tisre-folder').show();
+    $('.products, .thecart, .default-folder').show();
   }
 //FOLDER:
   $('button[name=folder]').hover(function(){
@@ -14,9 +14,9 @@ $(document).ready(function(){
   });
 
   $('button[name=folder]').click(function(){
-    var openFolderName = '.' + $(this).parent('.folder').attr('id');
+    var openFolderName = '.' + $(this).attr('id');
     $(openFolderName).show();
-    $(this).parent('.folder').hide();
+    $(this).parent().parent('.folder').hide();
     $('.products').hide();
     $('button[name=back-to-folders]').show();
     $('.thecart').hide();

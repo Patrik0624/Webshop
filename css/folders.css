@@ -1,5 +1,6 @@
 .folders {
-  width: 100%;
+  display: flex;
+  justify-content: center;
   margin-top: calc(5rem + 29.9vh);
   font-size: 0;
   position: relative;
@@ -20,11 +21,7 @@ button[name=back-to-folders] {
 }
 
 .folder {
-  width: calc(100% - 30vw);
-  display: block;
-  margin: 1.5rem 15vw 1rem;
-  vertical-align: top;
-  position: relative;
+  margin: 0 15vw 1rem;
   min-height: 10rem;
 }
 
@@ -34,7 +31,10 @@ button[name=back-to-folders] {
   border: none;
   background-color: rgba(0,0,0,.0);
   cursor: pointer;
-  margin-left: calc(50% - 5rem);
+}
+
+.folder div {
+  display: inline-block;
 }
 
 .folder-icon {
@@ -103,7 +103,7 @@ button[name=back-to-folders] {
   }
 
   @media screen and (min-width: 1024px) {
-    .folder {
+    .folders {
 			margin-top: calc(5rem + 50vh);
 		}
 
