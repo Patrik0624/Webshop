@@ -1,0 +1,128 @@
+/*==========NAV==========*/
+nav {
+  width: 100%;
+  height: 5rem;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 0 3px gray;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.4rem;
+  position: absolute;
+  padding: 1.7rem 5vw;
+}
+
+.cart {
+  right: 0;
+  transition: 0.4s ease-in-out;
+  margin-right: 2vw;
+}
+
+.products_button, .backtomenu {
+  transition: 0.1s ease-in-out;
+}
+
+.products_button {
+  display: none;
+}
+
+.logo {
+  height: 4rem;
+  position: absolute;
+  left: calc(50% - 2rem);
+  top: calc(50% - 2rem);
+  cursor: pointer;
+}
+
+.fa-bars, .fa-times {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-left: 5vw;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: none;
+  border-top: 1px solid gray;
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+}
+
+.nav-menu a {
+  position: relative;
+  padding: 0;
+  display: block;
+  vertical-align: middle;
+  width: 100%;
+  padding-top: 1.7rem;
+  height: 5rem;
+  text-align: center;
+  background-color: white;
+  border-bottom: 1px solid gray;
+}
+
+
+/*==========HEADER==========*/
+	header {
+		position: absolute;
+		top: 5rem;
+		width: 100%;
+		height: 30vh;
+		background-color: #013148;
+		display: table;
+	}
+
+	h1 {
+		font-size: 2rem;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.3rem;
+    line-height: 2.3rem;
+		color: white;
+	}
+
+
+/*==========MEDIA QUERY==========*/
+  @media screen and (min-width: 768px) {
+    .fa-bars {
+			display: none !important;
+		}
+
+    h1 {
+			font-size: 2.8rem;
+			line-height: 3rem;
+		}
+
+    .products_button {
+			display: block;
+		}
+  }
+
+  @media screen and (min-width: 1024px) {
+    nav a {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+
+    header {
+      height: 50vh;
+    }
+
+		header h1 {
+			font-size: 3rem;
+		}
+
+    .products_button:hover, .backtomenu:hover {
+			transition: 0.1s ease-in-out;
+		}
+  }

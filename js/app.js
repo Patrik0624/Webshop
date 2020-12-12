@@ -1,4 +1,30 @@
 $(document).ready(function(){
+//OTHER:
+  function backToNormal(){
+    $('.tisre-folder').siblings().hide();
+    $('button[name=back-to-folder]').hide();
+    $('.products, .thecart, .tisre-folder').show();
+  }
+//FOLDER:
+  $('button[name=folder]').hover(function(){
+    var x = window.matchMedia("(min-width: 1024px)")
+    if (x.matches) {
+      $(this).children().toggleClass('fa-folder fa-folder-open');
+    }
+  });
+
+  $('button[name=folder]').click(function(){
+    var openFolderName = '.' + $(this).parent('.folder').attr('id');
+    $(openFolderName).show();
+    $(this).parent('.folder').hide();
+    $('.products').hide();
+    $('button[name=back-to-folders]').show();
+    $('.thecart').hide();
+  });
+
+  $('button[name=back-to-folders]').click(function(){
+    backToNormal();
+  });
 //NAV MENU ON PHONE:
   $('.fa-bars').click(function(){
     $(this).toggleClass('fa-times fa-bars');
@@ -10,23 +36,36 @@ $(document).ready(function(){
   });
 //JUMP ON PAGE:
   $('.products_button').click(function(){
+    backToNormal();
     $("html, body").animate({scrollTop: $("#products").offset().top}, "slow");
   })
   $('.cart, .cart_button').click(function(){
+    backToNormal();
     $("html, body").animate({scrollTop: $("#cart").offset().top}, "slow");
   })
   $('.contact_button').click(function(){
+    backToNormal();
     $("html, body").animate({scrollTop: $("#contact").offset().top}, "slow");
   })
   $('.logo').click(function(){
+    backToNormal();
     $("html, body").animate({scrollTop: 0}, "slow");
   })
 //BIG PHOTO:
-  $('.product img').click(function(){
-    var id = $(this).parent().attr('id');
+  function openBigPhoto(id){
     var thisClass = id + '-photo';
     $('.' + thisClass).fadeIn('fast');
+  }
+  $('.product img, .folder-pictures img').click(function(){
+    var id = $(this).parent().attr('id');
+    openBigPhoto(id);
   });
+
+  $('.folder-pictures img').click(function(){
+    var id = $(this).attr('id');
+    openBigPhoto(id);
+  });
+
   $('.next').click(function(){
     var photoBox = $(this).siblings('.photo-box');
     photoBox.find('img').last().prependTo(photoBox);

@@ -6,7 +6,12 @@
     <title>Shlichus termékek</title>
     <link rel="shortcut icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/nav+header.css">
+    <link rel="stylesheet" href="css/folders.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/order-page.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/401c4fe106.js" crossorigin="anonymous"></script>
@@ -29,6 +34,35 @@
     <header>
       <h1>Shlichus termékek</h1>
     </header>
+    <div class="folders">
+      <button type="button" class="hide" name="back-to-folders"><i class="fas fa-arrow-left"></i></button>
+        <div class="tisre-folder folder" id="ros-hasana">
+          <button type="button" name="folder"><i class="fas fa-folder folder-icon"></i></button>
+          <p>2020 Tisré</p>
+        </div>
+        <div class="ros-hasana folder hide" id="ros-hasana-pictures">
+          <button type="button" name="folder"><i class="fas fa-folder folder-icon"></i></button>
+          <p>Ros hásáná</p>
+        </div>
+        <div class="ros-hasana-pictures hide folder">
+          <div class="folder-pictures csomag-pics">
+            <img src="assets/Products/Ros_hasana/Csomag/csomag1.png" id="csomag" alt="">
+            <p>Ros Hásáná csomag</p>
+          </div>
+          <div class="folder-pictures boritek-pics">
+            <img src="assets/Products/Ros_hasana/Boritek/Boritek.jpg" id="boritek" alt="">
+            <p>Ros Hásáná Boríték Képeslappal</p>
+          </div>
+          <div class="folder-pictures unnepi-fuzet-pics">
+            <img src="assets/Products/Ros_hasana/Unnepi-fuzet/unnepi-fuzet.png" id="unnepi-fuzet" alt="">
+            <p>Ros Hásáná Ünnepi füzet</p>
+          </div>
+          <div class="folder-pictures sofar-pictures">
+            <img src="assets/Products/Ros_hasana/Sofar/sofar1.png" id="sofar" alt="">
+            <p>Ros Hásáná Sófárfúlyás</p>
+          </div>
+        </div>
+    </div>
     <div class="products">
       <a id="products" href="#"></a>
       <div class="product eloaldaskartya" id="eloetel">
@@ -61,9 +95,19 @@
         </div>
         <button class="add-cart-button" type="button" name="kosárba">Kosárba <i class="fas fa-shopping-cart"></i></button>
       </div>
-      <div class="product tora" id="tora">
-        <img class="product-img" src="assets\Products\Tora\tora1.jpg" alt="">
-        <h3 class="product-title">Egy betű a tóra-tekercsben</h3>
+      <div class="product tora" id="szorolap">
+        <img class="product-img" src="assets\Products\Szorolap\szorolap1.png" alt="">
+        <h3 class="product-title">Betű a Tórába Szórólap</h3>
+        <div class="quantity-input-box">
+          <button type="button" name="quantity-minus"><i class="fas fa-minus"></i></button>
+          <input type="number" class="quantity-selector" value="1">
+          <button type="button" name="quantity-plus"><i class="fas fa-plus"></i></button>
+        </div>
+        <button class="add-cart-button" type="button" name="kosárba">Kosárba <i class="fas fa-shopping-cart"></i></button>
+      </div>
+      <div class="product tora" id="toramagnes">
+        <img class="product-img" src="assets\Products\Hutomagnes\magnes.png" alt="">
+        <h3 class="product-title">Betű a Tórába Hűtőmágnes</h3>
         <div class="quantity-input-box">
           <button type="button" name="quantity-minus"><i class="fas fa-minus"></i></button>
           <input type="number" class="quantity-selector" value="1">
@@ -117,47 +161,88 @@
       </div>
       <p>@2020 Shlichus Termékek. Minden jog fenntartva.</p>
     </footer>
-    <div class="big-photo-box eloetel-photo">
-      <div class="photo-box">
-        <img class="big-photo" src="assets/Products/Eloetel_aldas/eloaldaskek.JPG">
-        <img class="big-photo active" src="assets/Products/Eloetel_aldas/eloaldas.JPG">
+    <div class="photo-gallery">
+      <div class="big-photo-box eloetel-photo">
+        <div class="photo-box">
+          <img class="big-photo" src="assets/Products/Eloetel_aldas/eloaldaskek.JPG">
+          <img class="big-photo active" src="assets/Products/Eloetel_aldas/eloaldas.JPG">
+        </div>
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
       </div>
-      <i class="fas fa-chevron-left prev"></i>
-      <i class="fas fa-chevron-right next"></i>
-    </div>
-    <div class="big-photo-box gyertyatarto-photo">
-      <div class="photo-box">
-        <img class="big-photo" src="assets/Products/Gyertyatarto/gyertyatarto1.jpeg">
-        <img class="big-photo active" src="assets/Products/Gyertyatarto/gyertyatarto2.jpeg">
+      <div class="big-photo-box gyertyatarto-photo">
+        <div class="photo-box">
+          <img class="big-photo" src="assets/Products/Gyertyatarto/gyertyatarto1.jpeg">
+          <img class="big-photo active" src="assets/Products/Gyertyatarto/gyertyatarto2.jpeg">
+        </div>
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
       </div>
-      <i class="fas fa-chevron-left prev"></i>
-      <i class="fas fa-chevron-right next"></i>
-    </div>
-    <div class="big-photo-box fuzet-photo">
-      <div class="photo-box">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve12.png">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve11.png">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve10.png">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve9.png">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve8.png">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve7.jpeg">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve6.jpeg">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve5.png">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve4.png">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve3.png">
-        <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve2.png">
-        <img class="big-photo active" src="assets/Products/Nida_mikve_fuzet/nidamikve1.jpeg">
+      <div class="big-photo-box fuzet-photo">
+        <div class="photo-box">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve12.png">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve11.png">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve10.png">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve9.png">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve8.png">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve7.jpeg">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve6.jpeg">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve5.png">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve4.png">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve3.png">
+          <img class="big-photo" src="assets/Products/Nida_mikve_fuzet/nidamikve2.png">
+          <img class="big-photo active" src="assets/Products/Nida_mikve_fuzet/nidamikve1.jpeg">
+        </div>
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
       </div>
-      <i class="fas fa-chevron-left prev"></i>
-      <i class="fas fa-chevron-right next"></i>
-    </div>
-    <div class="big-photo-box tora-photo">
-      <div class="photo-box">
-        <img class="big-photo" src="assets/Products/Tora/tora1.jpg">
-        <img class="big-photo active" src="assets/Products/Tora/tora2.jpg">
+      <div class="big-photo-box boritek-photo">
+        <div class="photo-box">
+          <img class="big-photo square active" src="assets/Products/Ros_hasana/Boritek/Boritek.jpg" alt="">
+          <img class="big-photo square" src="assets/Products/Ros_hasana/Boritek/Boritek2.jpeg" alt="">
+          <img class="big-photo square" src="assets/Products/Ros_hasana/Boritek/Boritek3.jpeg" alt="">
+          <img class="big-photo square" src="assets/Products/Ros_hasana/Boritek/Boritek4.jpeg" alt="">
+          <img class="big-photo square" src="assets/Products/Ros_hasana/Boritek/Boritek5.jpeg" alt="">
+          <img class="big-photo square" src="assets/Products/Ros_hasana/Boritek/Boritek6.jpg" alt="">
+          <img class="big-photo square" src="assets/Products/Ros_hasana/Boritek/Boritek7.jpeg" alt="">
+        </div>
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
       </div>
-      <i class="fas fa-chevron-left prev"></i>
-      <i class="fas fa-chevron-right next"></i>
+      <div class="big-photo-box csomag-photo">
+        <div class="photo-box">
+          <img class="big-photo square active" src="assets/Products/Ros_hasana/Csomag/csomag1.png" alt="">
+          <img class="big-photo square" src="assets/Products/Ros_hasana/Csomag/csomag2.png" alt="">
+        </div>
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
+      </div>
+      <div class="big-photo-box unnepi-fuzet-photo">
+        <div class="photo-box">
+          <img class="big-photo square active" src="assets/Products/Ros_hasana/Unnepi-fuzet/unnepi-fuzet.png" alt="">
+        </div>
+      </div>
+      <div class="big-photo-box sofar-photo">
+        <div class="photo-box">
+          <img class="big-photo square active" src="assets/Products/Ros_hasana/Sofar/sofar1.png" alt="">
+          <img class="big-photo square" src="assets/Products/Ros_hasana/Sofar/sofar2.png" alt="">
+        </div>
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
+      </div>
+      <div class="big-photo-box szorolap-photo">
+        <div class="photo-box">
+          <img class="big-photo active" src="assets/Products/Szorolap/szorolap1.png" alt="">
+          <img class="big-photo" src="assets/Products/Szorolap/szorolap2.png" alt="">
+        </div>
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
+      </div>
+      <div class="big-photo-box toramagnes-photo">
+        <div class="photo-box">
+          <img class="big-photo active" src="assets/Products/Hutomagnes/magnes.png" alt="">
+        </div>
+      </div>
     </div>
   </body>
 </html>

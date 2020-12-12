@@ -1,0 +1,132 @@
+.folders {
+  width: 100%;
+  margin-top: calc(5rem + 29.9vh);
+  font-size: 0;
+  position: relative;
+  background-color: rgba(236, 195, 133,.5);
+  padding-bottom: 0.2rem;
+}
+
+button[name=back-to-folders] {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  border: none;
+  background-color: rgba(0,0,0,.0);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+  transition: 0.1s ease-in-out;
+}
+
+.folder {
+  width: calc(100% - 30vw);
+  display: block;
+  margin: 1.5rem 15vw 1rem;
+  vertical-align: top;
+  position: relative;
+  min-height: 10rem;
+}
+
+.folder button {
+  width: 10rem;
+  height: 10rem;
+  border: none;
+  background-color: rgba(0,0,0,.0);
+  cursor: pointer;
+  margin-left: calc(50% - 5rem);
+}
+
+.folder-icon {
+  font-size: 8rem;
+  color: rgba(50,50,50);
+}
+
+.fa-folder-open {
+  margin-left: 0.6rem;
+}
+
+.folder p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: -1rem;
+}
+
+.hide {
+  display: none;
+  padding-bottom: 3rem;
+}
+
+.folder-pictures {
+  width: calc(100% - 20vw);
+  display: inline-block;
+  vertical-align: top;
+  margin: 3rem 10vw -2.5rem;
+}
+
+.folder-pictures img {
+  width: 100%;
+  vertical-align: top;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid gray;
+  padding: 0.3rem;
+  background-color: white;
+  box-shadow: 0 0 10px gray;
+}
+
+  .folder-pictures p {
+    margin: 0.5rem 0 1rem;
+    line-height: 1.7rem;
+    text-align: center;
+  }
+
+
+
+/*==========MEDIA QUERY==========*/
+  @media screen and (min-width: 425px) {
+    .folder-pictures {
+      width: calc(100% / 2 - 1rem);
+      margin: 3rem 0.5rem -2.5rem;
+    }
+
+    .folder p {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .folder-pictures {
+			width: calc(100% / 3 - 4vw);
+			margin: 3rem 2vw -2.5rem;
+		}
+  }
+
+  @media screen and (min-width: 1024px) {
+    .folder {
+			margin-top: calc(5rem + 50vh);
+		}
+
+    .folder p {
+      font-size: 1.6rem;
+			line-height: 1.9rem;
+  	}
+
+    .folder-pictures p {
+      margin: 1rem 0 1rem;
+    }
+
+		.folder-view {
+			margin-top: calc(5rem + 50vh);
+		}
+
+    .folder-pictures {
+			width: calc(100% / 3 - 4rem);
+			margin: 3rem 2rem -2.5rem;
+		}
+
+    button[name=back-to-folders]:hover {
+			left: 0.5rem;
+			padding-right: 1.5rem;
+		}
+  }
