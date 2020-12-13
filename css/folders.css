@@ -1,11 +1,9 @@
 .folders {
-  display: flex;
-  justify-content: center;
   margin-top: calc(5rem + 29.9vh);
   font-size: 0;
   position: relative;
   background-color: rgba(236, 195, 133,.5);
-  padding-bottom: 0.2rem;
+  padding: 0.2rem 0;
 }
 
 button[name=back-to-folders] {
@@ -31,10 +29,11 @@ button[name=back-to-folders] {
   border: none;
   background-color: rgba(0,0,0,.0);
   cursor: pointer;
+  margin-left: calc(50% - 5rem);
 }
 
 .folder div {
-  display: inline-block;
+  display: block;
 }
 
 .folder-icon {
@@ -61,7 +60,7 @@ button[name=back-to-folders] {
   width: calc(100% - 20vw);
   display: inline-block;
   vertical-align: top;
-  margin: 3rem 10vw -2.5rem;
+  margin: 3rem 10vw -1rem;
 }
 
 .folder-pictures img {
@@ -75,11 +74,11 @@ button[name=back-to-folders] {
   box-shadow: 0 0 10px gray;
 }
 
-  .folder-pictures p {
-    margin: 0.5rem 0 1rem;
-    line-height: 1.7rem;
-    text-align: center;
-  }
+.folder-pictures p {
+  margin: 0.5rem 0 1rem;
+  line-height: 1.7rem;
+  text-align: center;
+}
 
 
 
@@ -95,11 +94,34 @@ button[name=back-to-folders] {
       line-height: 1.4rem;
     }
   }
+
+
+  @media screen and (min-width: 460px) {
+    .folders {
+      display: flex;
+      justify-content: center;
+    }
+
+    .folder div {
+      display: inline-block;
+    }
+
+    .folder button {
+      margin-left: inherit;
+    }
+  }
+
+
   @media screen and (min-width: 768px) {
+    .folder div {
+      margin: 0 1rem;
+    }
+
     .folder-pictures {
 			width: calc(100% / 3 - 4vw);
-			margin: 3rem 2vw -2.5rem;
+			margin: 3rem 2vw -2.5rem !important;
 		}
+
   }
 
   @media screen and (min-width: 1024px) {
