@@ -1,18 +1,10 @@
-.products::before {
-  content: "";
-  display: block;
-  width: 75%;
-  height: 2px;
-  background-color: rgba(50,50,50);
-  margin: auto;
-}
-
 .products {
+  display: none;
   width: 100%;
   font-size: 0;
   padding: 0 1rem;
   position: relative;
-  background-color: rgba(236, 195, 133,.5);
+  background-color: rgb(235, 232, 225);
 }
 
 .product {
@@ -21,6 +13,7 @@
   margin: 6vw 15vw;
   vertical-align: top;
   position: relative;
+  background-color: white;
 }
 
 #products {
@@ -32,8 +25,6 @@
 .product img {
   width: 100%;
   cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 0 5px gray;
 }
 
 .active {
@@ -51,15 +42,16 @@ button[name=kosárba] {
   width: 100%;
   padding: 0.7rem;
   margin: auto;
-  background-color: white;
+  background-color: rgb(235, 232, 225);
   font-family: 'Montserrat';
   font-size: 1.1rem;
+  color: #999;
+  text-decoration: underline;
   cursor: pointer;
   font-weight: 500;
-  border-radius: 10px;
   transition: 0.2s ease-in-out;
   border: none;
-  box-shadow: 0 0 2px gray;
+  border-bottom: 2px solid #999;
 }
 
 .products input {
@@ -68,9 +60,9 @@ button[name=kosárba] {
   text-align: center;
   font-family: 'Montserrat';
   font-size: 1rem;
-  border: none;
   border-radius: 10px;
-  box-shadow: 0 0 2px gray;
+  border: none;
+  box-shadow: 0 0 3px gray;
 }
 
 .products input::-webkit-outer-spin-button,
@@ -87,6 +79,7 @@ button[name=kosárba] {
   width: 100%;
   margin: auto;
   margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
   font-size: 0;
 }
 
@@ -109,7 +102,7 @@ button[name=quantity-plus] {
   font-size: 1.7rem;
   cursor: pointer;
   color: white;
-  text-shadow: 0 0 1px black;
+  text-shadow: 0 0 3px gray;
   display: inline-block;
   vertical-align: middle;
 }
@@ -185,11 +178,10 @@ button[name=quantity-plus] {
     .product {
 			width: calc(100% / 2 - 2vw);
 			margin: 3vw 1vw;
-      padding: 2vw;
 		}
 
 		.product h3 {
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			line-height: 1.4rem;
 			margin: 1rem 0;
 		}
@@ -211,7 +203,6 @@ button[name=quantity-plus] {
     .product {
 			width: calc(100% / 3 - 4vw);
 			margin: 3vw 2vw;
-			padding: 2vw;
 		}
 
     .products::before {
@@ -230,16 +221,18 @@ button[name=quantity-plus] {
   @media screen and (min-width: 1024px) {
     .products::before {
       width: 32rem;
+      margin-bottom: 1rem;
     }
 
     .products {
-      padding: 1rem 10%;
+      padding: 1rem 0 3rem;
+      margin: auto;
+      width: 60rem;
     }
 
 		.product {
 			width: calc(100% / 3 - 1rem);
-			margin: 0.5rem;
-			padding: 2vw;
+			margin: 1rem 0.5rem;
 		}
 
     .product p {
@@ -249,17 +242,18 @@ button[name=quantity-plus] {
   	}
 
 		.product h3 {
-			font-size: 1.6rem;
+			font-size: 1.3rem;
 			line-height: 1.8rem;
 			margin: 1rem 0;
 		}
 
-		button[name=kosárba] {
-			width: 80%;
-			margin-left: 10%;
-		}
+    button[name=kosárba]:hover {
+      color: black;
+      border-bottom: 2px solid black;
+      transition: 0.2s ease-in-out;
+    }
 
-    button[name=kosárba]:hover, .colors button:hover, .purchase-button:hover {
+    .colors button:hover, .purchase-button:hover {
 			background-color: rgb(31, 62, 152);
 			color: white;
 			transition: 0.2s ease-in-out;

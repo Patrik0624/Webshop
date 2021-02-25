@@ -1,29 +1,28 @@
 $(document).ready(function(){
 //OTHER:
   function backToNormal(){
-    $('.default-folder').siblings().hide();
-    $('button[name=back-to-folder]').hide();
-    $('.products, .thecart, .default-folder').show();
+    $('.products, .folder, .tisre-folder').hide();
+    $('.card').show();
   }
-//FOLDER:
-  $('button[name=folder]').hover(function(){
-    var x = window.matchMedia("(min-width: 1024px)")
-    if (x.matches) {
-      $(this).children().toggleClass('fa-folder fa-folder-open');
-    }
+//CARDS:
+  $('.items-card').click(function(){
+    $('.products').show();
+    $('.cards').children('.card').hide();
   });
 
-  $('button[name=folder]').click(function(){
-    var openFolderName = '.' + $(this).attr('id');
-    $(openFolderName).show();
-    $(this).parent().parent('.folder').hide();
-    $('.products').hide();
-    $('button[name=back-to-folders]').show();
-    $('.thecart').hide();
+  $('.tisre-folder-card').click(function(){
+    $('.tisre-folder').show();
+    $('.cards').children('.card').hide();
+  })
+
+  $('.ros-hasana').click(function(){
+    $('.inside-ros-hasana-folder').show();
+    $('.tisre-folder').hide();
   });
 
-  $('button[name=back-to-folders]').click(function(){
-    backToNormal();
+  $('.szukot').click(function(){
+    $('.inside-szukot-folder').show();
+    $('.tisre-folder').hide();
   });
 //NAV MENU ON PHONE:
   $('.fa-bars').click(function(){

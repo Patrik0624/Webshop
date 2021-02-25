@@ -1,21 +1,55 @@
-.folders {
-  margin-top: calc(5rem + 29.9vh);
+/*===========TISRE FOLDER==========*/
+.tisre-folder {
+  display: none;
+  width: 80%;
   font-size: 0;
-  position: relative;
-  background-color: rgba(236, 195, 133,.5);
-  padding: 0.2rem 0;
+  margin: auto;
 }
 
-button[name=back-to-folders] {
-  position: absolute;
-  top: 0.5rem;
-  left: 1rem;
-  border: none;
-  background-color: rgba(0,0,0,.0);
-  font-size: 2rem;
+.subfolder {
+  width: calc(50% - 0.4rem);
+  margin: 0.2rem;
+  height: 40vw;
+  display: inline-table;
   cursor: pointer;
-  padding: 1rem;
-  transition: 0.1s ease-in-out;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  vertical-align: top;
+}
+
+.ros-hasana {
+  background-image: url('../assets/Products/Ros_hasana/Unnepi-fuzet/unnepi-fuzet.png');
+}
+
+.szukot {
+  background-image: url('../assets/Products/Szukot/Szukot-molino.png');
+}
+
+.subfolder h1 {
+  text-align: center;
+  position: relative;
+  padding: 0.5rem;
+  background-color: rgba(100,100,100,.4);
+  font-size: 1.5rem;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  line-height: 1.7rem;
+  color: white;
+  transition: all 0.4s;
+}
+
+
+
+/*===========FOLDERS==========*/
+.folders {
+  font-size: 0;
+  position: relative;
+  background-color: rgb(235, 232, 225);
+  padding: 0.2rem 0;
 }
 
 .folder {
@@ -36,19 +70,12 @@ button[name=back-to-folders] {
   display: block;
 }
 
-.folder-icon {
-  font-size: 8rem;
-  color: rgba(50,50,50);
-}
-
-.fa-folder-open {
-  margin-left: 0.6rem;
-}
-
 .folder p {
   font-size: 1.5rem;
   text-align: center;
   margin-top: -1rem;
+  color: white;
+  text-shadow: 0 0 2px black;
 }
 
 .hide {
@@ -60,7 +87,7 @@ button[name=back-to-folders] {
   width: calc(100% - 20vw);
   display: inline-block;
   vertical-align: top;
-  margin: 3rem 10vw -1rem;
+  margin: 1rem 10vw 1rem;
 }
 
 .folder-pictures img {
@@ -68,17 +95,15 @@ button[name=back-to-folders] {
   vertical-align: top;
   position: relative;
   cursor: pointer;
-  border: 1px solid gray;
-  padding: 0.3rem;
-  background-color: white;
-  box-shadow: 0 0 10px gray;
 }
 
 .folder-pictures p {
   margin: 0.5rem 0 1rem;
   line-height: 1.7rem;
   text-align: center;
+  font-weight: 500;
 }
+
 
 
 
@@ -86,7 +111,7 @@ button[name=back-to-folders] {
   @media screen and (min-width: 425px) {
     .folder-pictures {
       width: calc(100% / 2 - 1rem);
-      margin: 3rem 0.5rem -2.5rem;
+      margin: 1rem 0.5rem -1rem;
     }
 
     .folder p {
@@ -119,16 +144,18 @@ button[name=back-to-folders] {
 
     .folder-pictures {
 			width: calc(100% / 3 - 4vw);
-			margin: 3rem 2vw -2.5rem !important;
+			margin: 0 2vw !important;
 		}
+
+    .subfolder h1 {
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+      line-height: 2.3rem;
+    }
 
   }
 
   @media screen and (min-width: 1024px) {
-    .folders {
-			margin-top: calc(5rem + 50vh);
-		}
-
     .folder p {
       font-size: 1.6rem;
 			line-height: 1.9rem;
@@ -144,11 +171,23 @@ button[name=back-to-folders] {
 
     .folder-pictures {
 			width: calc(100% / 3 - 4rem);
-			margin: 3rem 2rem -2.5rem;
+			margin: 3rem 2rem -3rem;
 		}
 
     button[name=back-to-folders]:hover {
 			left: 0.5rem;
 			padding-right: 1.5rem;
 		}
+
+    .tisre-folder {
+      width: 48rem;
+    }
+
+    .subfolder {
+      height: 24rem;
+    }
+
+    .subfolder h1:hover {
+      background-color: rgba(100,100,100,.5);
+    }
   }

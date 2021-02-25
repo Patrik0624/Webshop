@@ -1,0 +1,57 @@
+.cards {
+  width: 100%;
+  margin-top: calc(5rem + 29.9vh);
+  padding-top: 1rem;
+}
+
+.card {
+  display: table;
+  width: 80%;
+  height: 10rem;
+  margin: 0.5rem 10%;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.items-card {
+  background-image: url('../assets/Products/Eloetel_aldas/eloaldas.JPG');
+}
+
+.tisre-folder-card {
+  background-image: url('../assets/Products/Ros_hasana/Csomag/csomag1.jpeg');
+}
+
+.card h1 {
+  text-align: center;
+  position: relative;
+  padding: 0.5rem;
+  background-color: rgba(100,100,100,.3);
+  font-size: 2rem;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  line-height: 2.3rem;
+  color: white;
+  transition: all 0.4s;
+}
+
+
+
+/*==========MEDIA QUERY==========*/
+@media screen and (min-width: 1024px) {
+  .cards {
+    width: 60rem;
+    margin: calc(5rem + 50vh) auto 0;
+  }
+
+  .card {
+    height: 13rem;
+  }
+
+  .card h1:hover {
+    background-color: rgba(100,100,100,.5);
+  }

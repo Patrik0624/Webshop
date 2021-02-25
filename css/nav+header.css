@@ -79,7 +79,7 @@ nav a {
 		display: table;
 	}
 
-	h1 {
+	header h1 {
 		font-size: 2rem;
 		display: table-cell;
 		vertical-align: middle;

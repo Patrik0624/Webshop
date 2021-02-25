@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/order-page.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cards.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/401c4fe106.js" crossorigin="anonymous"></script>
@@ -34,24 +35,15 @@
     <header>
       <h1>Shlichus termékek</h1>
     </header>
+    <div class="cards">
+      <div class="card items-card"><h1>Zsinagógák számára</h1></div>
+      <div class="card tisre-folder-card"><h1>Ünnepek 2020</h1></div>
+    </div>
+    <div class="tisre-folder">
+      <div class="subfolder ros-hasana"><h1>Ros hásáná</h1></div>
+      <div class="subfolder szukot"><h1>Szukot</h1></div>
+    </div>
     <div class="folders">
-      <button type="button" class="hide" name="back-to-folders"><i class="fas fa-arrow-left"></i></button>
-        <div class="default-folder folder">
-          <div class="tisre-folder">
-            <button type="button" name="folder" id="inside-tisre-folder"><i class="fas fa-folder folder-icon"></i></button>
-            <p>2020 Tisré</p>
-          </div>
-        </div>
-        <div class="inside-tisre-folder folder hide multi-folders">
-          <div class="ros-hasana">
-            <button type="button" name="folder" id="inside-ros-hasana-folder"><i class="fas fa-folder folder-icon"></i></button>
-            <p>Ros hásáná</p>
-          </div>
-          <div class="szukot">
-            <button type="button" name="folder" id="inside-szukot-folder"><i class="fas fa-folder folder-icon"></i></button>
-            <p>Szukot</p>
-          </div>
-        </div>
         <div class="inside-ros-hasana-folder hide folder">
           <div class="folder-pictures csomag-pics">
             <img src="assets/Products/Ros_hasana/Csomag/csomag1.png" id="csomag" alt="">
