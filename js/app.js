@@ -1,5 +1,5 @@
 $(document).ready(function(){
-//OTHER:
+//BACK TO NORMAL:
   function backToNormal(){
     $('.products, .folder, .tisre-folder').hide();
     $('.card').show();
