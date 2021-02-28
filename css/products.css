@@ -219,11 +219,6 @@ button[name=quantity-plus] {
   }
 
   @media screen and (min-width: 1024px) {
-    .products::before {
-      width: 32rem;
-      margin-bottom: 1rem;
-    }
-
     .products {
       padding: 1rem 0 3rem;
       margin: auto;

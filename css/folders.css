@@ -9,6 +9,7 @@
 .subfolder {
   width: calc(50% - 0.4rem);
   margin: 0.2rem;
+  margin-top: 1rem;
   height: 40vw;
   display: inline-table;
   cursor: pointer;
@@ -74,8 +75,7 @@
   font-size: 1.5rem;
   text-align: center;
   margin-top: -1rem;
-  color: white;
-  text-shadow: 0 0 2px black;
+  color: black;
 }
 
 .hide {
@@ -101,7 +101,6 @@
   margin: 0.5rem 0 1rem;
   line-height: 1.7rem;
   text-align: center;
-  font-weight: 500;
 }
 
 

@@ -4,6 +4,10 @@ $(document).ready(function(){
     $('.products, .folder, .tisre-folder').hide();
     $('.card').show();
   }
+
+  $('.backtomenu').click(function(){
+    backToNormal();
+  })
 //CARDS:
   $('.items-card').click(function(){
     $('.products').show();
@@ -34,16 +38,16 @@ $(document).ready(function(){
     $('.nav-menu').fadeOut('fast');
   });
 //JUMP ON PAGE:
-  $('.products_button').click(function(){
+  $('nav a').click(function(){
     backToNormal();
+  })
+  $('.products_button').click(function(){
     $("html, body").animate({scrollTop: $("#products").offset().top}, "slow");
   })
   $('.cart, .cart_button').click(function(){
-    backToNormal();
     $("html, body").animate({scrollTop: $("#cart").offset().top}, "slow");
   })
   $('.contact_button').click(function(){
-    backToNormal();
     $("html, body").animate({scrollTop: $("#contact").offset().top}, "slow");
   })
   $('.logo').click(function(){
